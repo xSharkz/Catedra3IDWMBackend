@@ -32,17 +32,17 @@ Catedra3IDWMBackend es un proyecto backend web desarrollado con ASP.NET Core, di
 3. Actualiza el archivo `appsettings.json` con la conexión a la base de datos y la configuración de JWT.
     ```bash
     "Cloudinary": {
-        "CloudName":"dt1g9zgsw",
-        "ApiKey":"737464834781119",
-        "ApiSecret":"pvSRjM0IHJdm3GFIWObi7DPM8pI"
+        "CloudName":"",
+        "ApiKey":"",
+        "ApiSecret":""
     },
     "Jwt": {
-        "Issuer": "http://localhost:5100",
-        "Audience": "http://localhost:5100",
-        "Secret": "Catedra3IDWMBackendClaveSecretaOMGLOLTieneQueSerLarga"
+        "Issuer": "",
+        "Audience": "",
+        "Secret": ""
     },
     "ConnectionStrings": {
-        "DefaultConnection": "Data Source=Catedra3IDWM.db"
+        "DefaultConnection": "Data Source=databasename.db"
     }
     ```
 4. Aplica las migraciones:
