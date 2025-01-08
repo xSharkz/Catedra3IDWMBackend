@@ -2,12 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Catedra3IDWMBackend.Interfaces;
 using CloudinaryDotNet;
 using CloudinaryDotNet.Actions;
 
 namespace Catedra3IDWMBackend.Services
 {
-    public class CloudinaryService
+    public class CloudinaryService : ICloudinaryService
     {
         private readonly Cloudinary _cloudinary;
 
