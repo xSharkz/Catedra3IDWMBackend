@@ -93,11 +93,5 @@ namespace Catedra3IDWMBackend.Controllers
             var token = _jwtService.GenerateJWTToken(claims);
             return Ok(new { Token = token });
         }
-        [Authorize(Roles = "Usuario")]
-        [HttpGet("protected")]
-        public IActionResult ProtectedEndpoint()
-        {
-            return Ok("¡Acceso permitido para el rol Usuario!");
-        }
     }
 }
