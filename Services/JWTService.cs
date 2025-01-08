@@ -18,14 +18,8 @@ namespace Catedra3IDWMBackend.Services
             _configuration = configuration;
         }
 
-        public string GenerateJWTToken(string email)
+        public string GenerateJWTToken(IEnumerable<Claim> claims)
         {
-            var claims = new[]
-            {
-                new Claim(ClaimTypes.NameIdentifier, email),
-                new Claim(ClaimTypes.Name, email)
-            };
-
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Secret"]));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
             var token = new JwtSecurityToken(
@@ -35,7 +29,7 @@ namespace Catedra3IDWMBackend.Services
                 expires: DateTime.Now.AddHours(1),
                 signingCredentials: creds
             );
-
+            
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
     }
