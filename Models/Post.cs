@@ -12,9 +12,6 @@ namespace Catedra3IDWMBackend.Models
     {
         [Key]
         public long Id { get; set; }
-
-        [Required]
-        [MinLength(5, ErrorMessage = "El título debe tener al menos 5 caracteres.")]
         public string Title { get; set; } = string.Empty;
 
         [Required]
@@ -24,12 +21,10 @@ namespace Catedra3IDWMBackend.Models
         [Url(ErrorMessage = "La URL de la imagen debe ser válida.")]
         public string Url { get; set; } = string.Empty;
 
-        [Required]
-        public string UserId { get; set; } = string.Empty;
-
         [JsonIgnore]
-
+        [Required]
+        public string UserId { get; set; }
         [ForeignKey("UserId")]
-        public ApplicationUser User { get; set; } = null!;
+        public User User { get; set; } = null!;
     }
 }
