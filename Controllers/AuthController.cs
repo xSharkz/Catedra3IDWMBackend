@@ -86,10 +86,6 @@ namespace Catedra3IDWMBackend.Controllers
                 new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()) 
             };
             claims.AddRange(userRoles.Select(role => new Claim(ClaimTypes.Role, role)));
-            foreach (var claim in claims)
-            {
-                Console.WriteLine($"Claim Type: {claim.Type}, Claim Value: {claim.Value}");
-            }
             var token = _jwtService.GenerateJWTToken(claims);
             return Ok(new { Token = token });
         }
